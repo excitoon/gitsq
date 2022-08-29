@@ -66,15 +66,20 @@ else:
                 i = [int(i)]
             assert max(i) <= 0
             commits.extend(i)
-        assert len(commits) > 1
+
+    if len(commits) == 1:
+        print("Nothing to do, only one commit is selected.")
+
+    else:
         assert sorted(set(commits)) == sorted(commits)
+        assert commits
+        min_ago = 1 - min(commits)
 
-    min_ago = 1 - min(commits)
+        edit_cmd = " ".join([os.path.abspath(sys.argv[0])] + list(map(str, commits)) + ["--edit"])
+        print(edit_cmd)
 
-    edit_cmd = " ".join([os.path.abspath(sys.argv[0])] + list(map(str, commits)) + ["--edit"])
-    os.environ["GIT_EDITOR"] = edit_cmd
-    print(edit_cmd)
-    subprocess.run("git rebase -i HEAD~{}".format(min_ago), shell=True).check_returncode()
+        os.environ["GIT_EDITOR"] = edit_cmd
+        subprocess.run("git rebase -i HEAD~{}".format(min_ago), shell=True).check_returncode()
 
 historical_variable = """
 #!/bin/bash
