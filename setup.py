@@ -7,7 +7,7 @@ with open(f"{os.path.dirname(os.path.abspath(__file__))}/requirements.txt") as r
         setuptools.setup(
             name="gitsq",
             version="0.0.0",
-            description="Automatic squash tool for Git in Python",
+            description="Automatic squash tool for Git written in Python",
             long_description=readme.read(),
             long_description_content_type="text/markdown",
             author="Vladimir Chebotarev",
