@@ -19,7 +19,7 @@ with open(f"{os.path.dirname(os.path.abspath(__file__))}/requirements.txt") as r
                 "Intended Audience :: Developers",
                 "License :: OSI Approved :: MIT License",
                 "Operating System :: OS Independent",
-                "Programming Language :: Python :: 3 :: Only", # FIXME
+                "Programming Language :: Python :: 3 :: Only",  # FIXME
                 "Topic :: Software Development",
                 "Topic :: Terminals",
                 "Topic :: Utilities",
