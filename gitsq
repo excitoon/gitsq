@@ -81,6 +81,9 @@ else:
         os.environ["GIT_EDITOR"] = edit_cmd
         subprocess.run("git rebase -i HEAD~{}".format(min_ago), shell=True).check_returncode()
 
+    if os.environ.get("LUCKY_COMMIT_PREFIX"):
+        subprocess.run("lucky-commit")
+
 historical_variable = """
 #!/bin/bash
 
