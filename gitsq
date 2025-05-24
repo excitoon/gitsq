@@ -18,8 +18,9 @@ if "--edit" in sys.argv:
             assert everything[2] == ""
             everything = everything[3:]
             new_lines = everything[: everything.index("# This is the commit message #2:")]
-            assert new_lines[-1:] == [""]
-            del new_lines[-1]
+            if new_lines[-1:] == [""]:
+                # Rare cases; idk how people do that honestly.
+                del new_lines[-1]
             assert new_lines
 
         else:
