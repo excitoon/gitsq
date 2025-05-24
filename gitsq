@@ -19,7 +19,7 @@ if "--edit" in sys.argv:
             everything = everything[3:]
             new_lines = everything[: everything.index("# This is the commit message #2:")]
             if new_lines[-1:] == [""]:
-                # Rare cases; idk how people do that honestly.
+                # GitHub started to create commits without newlines.
                 del new_lines[-1]
             assert new_lines
 
