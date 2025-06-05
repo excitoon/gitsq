@@ -7,7 +7,7 @@ with open(f"{os.path.dirname(os.path.abspath(__file__))}/requirements.txt") as r
     with open(f"{os.path.dirname(os.path.abspath(__file__))}/README.md") as readme:
         setuptools.setup(
             name="gitsq",
-            version="0.0.3",
+            version="1.0.2",
             description="Automatic squash tool for Git written in Python",
             long_description=readme.read(),
             long_description_content_type="text/markdown",
